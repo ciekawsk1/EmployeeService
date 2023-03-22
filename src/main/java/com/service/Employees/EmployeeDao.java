@@ -1,4 +1,4 @@
-package com.employeeservice.model;
+package com.service.Employees;
 
 import org.springframework.stereotype.Component;
 
@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 @Component
 public class EmployeeDao {
-    static List<Employee> list = new ArrayList<>();
+    public static List<Employee> list = new ArrayList<>();
 
     static {
         list.add(new Employee(1234, "Adam", "adam@email.com"));
