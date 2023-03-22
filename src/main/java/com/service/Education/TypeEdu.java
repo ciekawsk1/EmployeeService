@@ -1,6 +1,6 @@
 package com.service.Education;
 
-public enum typeEdu {
+public enum TypeEdu {
     SZKOLAPODST,
     SZKOLASREDNIA,
 

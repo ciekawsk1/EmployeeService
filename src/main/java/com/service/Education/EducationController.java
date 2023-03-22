@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Map;
+
 @RestController
 public class EducationController {
     final EducationDao service;
@@ -13,8 +15,18 @@ public class EducationController {
         this.service = service;
     }
 
-    @GetMapping("/educations")
-    public List<Education> getAll() {
-        return service.getAllEducations();
+    @GetMapping("/education/sp")
+    public List<Education> getAllSzkolaPodstawowa() {
+        return service.getAllSzkolaPodst();
+    }
+
+    @GetMapping("/education/ss")
+    public List<Education> getAllSzkolaSrednia() {
+        return service.getAllSzkolaSrednia();
+    }
+
+    @GetMapping("/education/alls")
+    public Map<String, Object> getAllSzkoly() {
+       return service.getAllSzkoly();
     }
 }

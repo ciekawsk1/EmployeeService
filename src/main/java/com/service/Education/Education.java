@@ -2,16 +2,15 @@ package com.service.Education;
 
 public class Education {
     private int educationId;
-    private String typ;
-
+    public TypeEdu typeEdu;
     private String fullname;
     private String city;
 
     private String email;
 
-    public Education(int educationId, typeEdu typ, String fullname, String city, String email) {
+    public Education(int educationId, TypeEdu typeEdu, String fullname, String city, String email) {
         this.educationId = educationId;
-        this.typ = ;
+        this.typeEdu = typeEdu;
         this.fullname = fullname;
         this.city = city;
         this.email = email;
@@ -26,12 +25,12 @@ public class Education {
         this.educationId = educationId;
     }
 
-    public String getTyp() {
-        return typ;
+    public TypeEdu getTypeEdu() {
+        return typeEdu;
     }
 
-    public void setTyp(String typ) {
-        this.typ = typ;
+    public void setTypeEdu(TypeEdu typeEdu) {
+        this.typeEdu = typeEdu;
     }
 
     public String getFullname() {
