@@ -1,6 +1,7 @@
 package com.service.Employees;
 
 import com.service.exception_handler.EmployeeNotFound;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -29,7 +30,7 @@ public class EmployeeController {
         return employee;
     }
     @PostMapping("/employees/user")
-    public ResponseEntity<Object> saveEmployee(@RequestBody Employee emp) {
+    public ResponseEntity<Object> saveEmployee(@Valid @RequestBody Employee emp) {
         Employee newEmployee = service.saveEmployee(emp);
         URI uri = ServletUriComponentsBuilder
                 .fromCurrentRequest()

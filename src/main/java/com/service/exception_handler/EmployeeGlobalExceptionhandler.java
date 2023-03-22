@@ -1,7 +1,10 @@
 package com.service.exception_handler;
 
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,6 +30,15 @@ public class EmployeeGlobalExceptionhandler extends ResponseEntityExceptionHandl
         EmployeeExeptionResponse exception = new EmployeeExeptionResponse(ex.getMessage()
                 ,request.getDescription(false), new Date());
         return new ResponseEntity<Object>(exception, HttpStatus.NOT_FOUND);
+
+    }
+
+    @Override
+    protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpHeaders headers,
+                                                                  HttpStatusCode status, WebRequest request) {
+        EmployeeExeptionResponse exception = new EmployeeExeptionResponse("Invalid Input",
+                ex.getBindingResult().toString(), new Date());
+        return new ResponseEntity<Object>(exception, HttpStatus.BAD_REQUEST);
 
     }
 }

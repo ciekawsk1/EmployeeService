@@ -1,8 +1,13 @@
 package com.service.Employees;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Size;
+
 public class Employee {
     private int empId;
+    @Size(min=3, max =5, message ="Invalid chars for name!!!")
     private String name;
+    @Email
     private String email;
 
     public Employee(int empId, String name, String email) {
