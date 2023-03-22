@@ -1,22 +1,22 @@
 package com.service.Employees;
 
 public class Employee {
-    private int employeeId;
+    private int empId;
     private String name;
     private String email;
 
-    public Employee(int employeeId, String name, String email) {
-        this.employeeId = employeeId;
+    public Employee(int empId, String name, String email) {
+        this.empId = empId;
         this.name = name;
         this.email = email;
     }
 
     public int getEmployeeId() {
-        return employeeId;
+        return empId;
     }
 
-    public void setEmployeeId(int employeeId) {
-        this.employeeId = employeeId;
+    public void setEmployeeId(int empId) {
+        this.empId = empId;
     }
 
     public String getName() {

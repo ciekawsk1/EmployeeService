@@ -12,17 +12,26 @@ public class EducationDao {
     static List<Education> listaSp = new ArrayList<>();
 
     static {
-        listaSp.add(new Education(0011, TypeEdu.SZKOLAPODST, "Szkoła Podstawowa nr 1", "Krakow", "spnr1@edu.pl"));
-        listaSp.add(new Education(0012, TypeEdu.SZKOLAPODST, "Szkoła Podstawowa nr 2", "Krakow", "spnr2@edu.pl"));
-        listaSp.add(new Education(0013, TypeEdu.SZKOLAPODST, "Szkoła Podstawowa nr 3", "Krakow", "spnr2@edu.pl"));
+        listaSp.add(new Education(0011, TypeEdu.SZKOLAPODST,
+                "Szkoła Podstawowa nr 1", "Krakow", "spnr1@edu.pl"));
+        listaSp.add(new Education(0012, TypeEdu.SZKOLAPODST,
+                "Szkoła Podstawowa nr 2", "Krakow", "spnr2@edu.pl"));
+        listaSp.add(new Education(0013, TypeEdu.SZKOLAPODST,
+                "Szkoła Podstawowa nr 3", "Krakow", "spnr2@edu.pl"));
 
     }
     static List<Education> listaSs = new ArrayList<>();
 
     static {
-        listaSs.add(new Education(0021, TypeEdu.SZKOLASREDNIA, "Technikum nr 1", "Warszawa", "technikumnr1@edu.pl"));
-        listaSs.add(new Education(0022, TypeEdu.SZKOLASREDNIA, "Liceum nr 1", "Warszawa", "liceum1@edu.pl"));
-        listaSs.add(new Education(0023, TypeEdu.SZKOLASREDNIA, "Zawodowka nr 1", "Warszawa", "brudasy@edu.pl"));
+        listaSs.add(
+                new Education(0021, TypeEdu.SZKOLASREDNIA,
+                        "Technikum nr 1", "Warszawa", "technikumnr1@edu.pl"));
+        listaSs.add(
+                new Education(0022, TypeEdu.SZKOLASREDNIA,
+                        "Liceum nr 1", "Warszawa", "liceum1@edu.pl"));
+        listaSs.add(
+                new Education(0023, TypeEdu.SZKOLASREDNIA,
+                        "Zawodowka nr 1", "Warszawa", "brudasy@edu.pl"));
     }
     public List<Education> getAllSzkolaPodst() {
         return listaSp;
