@@ -1,0 +1,6 @@
+1. Stwórz dto i kontrolery
+2. zaimplementuj get i post
+3. handling reponse
+4. specific exception handling
+5. overall project exception handling
+6. implement delete method
