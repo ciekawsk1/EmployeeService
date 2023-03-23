@@ -3,6 +3,9 @@ package com.service.Employees;
 import com.service.exception_handler.EmployeeNotFound;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.hateoas.EntityModel;
+import org.springframework.hateoas.Link;
+import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -23,11 +26,15 @@ public class EmployeeController {
     }
 
     @GetMapping("/employees/{empId}")
-    public Employee getEmployeeById(@PathVariable int empId) {
+    public EntityModel<Employee> getEmployeeById(@PathVariable int empId) {
         Employee employee = service.getEmployeeById(empId);
         if (null == employee)
             throw new EmployeeNotFound("Employee Not found.");
-        return employee;
+        EntityModel<Employee> model = EntityModel.of(employee);
+        //tu to niewiadomo w ogole o co chodzi?
+        Link link = WebMvcLinkBuilder.linkTo(WebMvcLinkBuilder.methodOn(this.getClass()).getAll()).withRel("all-employees");
+        model.add(link);
+        return model;
     }
     @PostMapping("/employees/user")
     public ResponseEntity<Object> saveEmployee(@Valid @RequestBody Employee emp) {

@@ -1,6 +1,29 @@
+part1
+
 1. Stwórz dto i kontrolery
 2. zaimplementuj get i post
 3. handling reponse
 4. specific exception handling
 5. overall project exception handling
 6. implement delete method
+
+part2
+1. Exeption handling
+2. validation
+3. hateoas? te linki dodatkowe nie wiem po co.
+4. content negotiation
+
+
+part3
+dokumentacja swagger; cos z tym swaggerem nie chodzilo
+
+actuator-monitoring tool
+1. starter actuator - collect all api details
+2. hal browser - visualize the data
+
+http://localhost:8080/actuator
+http://localhost:8080/browser/index.html
+
+management.endpoints.web.exposure.include=*; to nie zadzialalo w propertisach.
+
+
